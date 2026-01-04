@@ -70,6 +70,7 @@
             height: 100px;
             border: 1px solid #eee;
             padding: 5px;
+            background: #fff;
         }
         .qr-text {
             font-size: 11px;
@@ -136,15 +137,31 @@
             color: var(--accent-color);
             text-decoration: none;
         }
-        /* 行動裝置適應 */
+        /* 行動裝置適應更新 */
         @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; }
-            .photo-area { margin-right: 0; margin-bottom: 15px; }
-            .qr-code-area { display: none; } /* 手機瀏覽時隱藏 QR Code */
-            .job-header { flex-direction: column; align-items: flex-start; }
-            .duration-tag { margin-left: 0; margin-top: 5px; display: inline-block; }
+            header { 
+                flex-direction: column; 
+                text-align: center; 
+            }
+            .photo-area { 
+                margin-right: 0; 
+                margin-bottom: 15px; 
+            }
+            .qr-code-area { 
+                display: block; 
+                margin-left: 0; 
+                margin-top: 15px; 
+            }
+            .job-header { 
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .duration-tag { 
+                margin-left: 0; 
+                margin-top: 5px; 
+                display: inline-block; 
+            }
         }
-        /* 列印優化 */
         @media print {
             body { background: white; padding: 0; }
             .container { box-shadow: none; max-width: 100%; }
@@ -168,11 +185,9 @@
             </div>
         </div>
         <div class="qr-code-area">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yenchensu.selfcloud.tw/" 
-         alt="QR Code" 
-         onerror="this.src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fyenchensu.selfcloud.tw%2F&chs=150x150';">
-    <div class="qr-text">掃描開啟網頁</div>
-</div>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yenchensu.selfcloud.tw/" alt="QR Code">
+            <div class="qr-text">掃描開啟網頁</div>
+        </div>
     </header>
 
     <section>
@@ -185,65 +200,4 @@
         
         <div class="experience-item">
             <div class="job-header">
-                <span class="company-title">日商久光製藥 | 業務主任 <span class="duration-tag">十年六個月</span></span>
-                <span class="date-range">2014/09 – 2025/03</span>
-            </div>
-            <ul>
-                <li><strong>規模通路經營：</strong> 深耕雲嘉南地區，定期拜訪並經營<strong>約 500 家藥局通路</strong>與經銷商。</li>
-                <li><strong>業務目標達成：</strong> 負責新產品報價、展示及行銷策略分析，確保業績持續成長。</li>
-                <li><strong>客情維護與售後：</strong> 提供完善售後服務，負責客訴處理，並主動察覺經銷商交易異常狀況以控制風險。</li>
-                <li><strong>品牌商化活動：</strong> 執行藥局陳列架優化與佈置；協辦馬拉松賽事支援及產品體驗展銷會。</li>
-            </ul>
-            <div class="achievement-box">
-                <strong>🏆 年度亮點成就：</strong> 2014 年亞洲區銷售第 3 名、2020 年亞洲區銷售前 10 名。
-            </div>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-header">
-                <span class="company-title">杏輝藥品 | 業務代表 <span class="duration-tag">二年一個月</span></span>
-                <span class="date-range">2012/08 – 2014/09</span>
-            </div>
-            <ul>
-                <li>負責藥局客戶開發與訂單管理、退貨處理及帳款回收。</li>
-                <li>進行產品行銷及特色介紹，提供購買建議與完善的售後服務。</li>
-            </ul>
-            <div class="achievement-box">
-                <strong>🏆 年度亮點成就：</strong> 2013 年全國第二季銷售第 3 名。
-            </div>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-header">
-                <span class="company-title">寶雅國際 | 醫美顧問 <span class="duration-tag">三年二個月</span></span>
-                <span class="date-range">2009/03 – 2012/05</span>
-            </div>
-            <ul>
-                <li>提供醫學美容與保健食品之專業諮詢服務，負責庫存管理與促銷活動執行。</li>
-                <li>收集並建立顧客資料，分析顧客喜好進行 CALL 客維繫，提升門店業績。</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-header">
-                <span class="company-title">台安藥局 | 藥師助理 <span class="duration-tag">一年一個月</span></span>
-                <span class="date-range">2008/01 – 2009/02</span>
-            </div>
-            <ul>
-                <li>協助銷售營養品、美妝品及婦嬰用品，提供基本用藥常識與衛教服務。</li>
-                <li>分擔藥局業務、貨架整理並協助健保處方調劑相關申報事務。</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>學歷背景</h2>
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 10px;">🎓 <strong>樹德科技大學</strong> - 建築與古蹟維護系</li>
-            <li>🎓 <strong>台南高工</strong> - 製圖科</li>
-        </ul>
-    </section>
-</div>
-
-</body>
-</html>
+                <span class="company-title">日商久光製藥 | 業務主任 <span class="duration-tag">十年六個月</span>
