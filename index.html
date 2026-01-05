@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蘇妍蓁 | 專業履歷表</title>
+    <title>蘇妍蓁 | 履歷表</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -11,89 +11,186 @@
             --bg-color: #f4f7f6;
             --text-color: #333;
         }
+        /* 優化滾動行為 */
+        html, body {
+            height: auto;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+        }
         body {
             font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
             line-height: 1.6;
-            background-color: var(--bg-color);
             color: var(--text-color);
-            margin: 0;
-            padding: 20px;
+            padding: 20px 10px; /* 手機端左右縮減間距 */
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: #fff;
-            padding: 40px;
+            padding: 40px 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border-radius: 8px;
+            /* 確保容器高度隨內容增長 */
+            height: auto;
+            overflow: visible; 
         }
         header {
-            text-align: center;
+            display: flex;
+            align-items: center;
             border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 20px;
+            padding-bottom: 25px;
             margin-bottom: 30px;
         }
-        h1 {
+        .photo-area {
+            flex: 0 0 130px;
+            margin-right: 25px;
+        }
+        .photo-area img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            display: block;
+        }
+        .header-text {
+            flex: 1;
+        }
+        .header-text h1 {
             margin: 0;
             color: var(--primary-color);
-            letter-spacing: 2px;
+            font-size: 2em;
+            letter-spacing: 1px;
         }
         .contact-info {
             margin-top: 10px;
-            font-size: 0.9em;
-            color: #666;
+            font-size: 0.95em;
+            color: #555;
+            word-break: break-all; /* 防止長 Email 撐開版面 */
         }
-        .contact-info span {
-            margin: 0 10px;
+        .qr-code-area {
+            flex: 0 0 110px;
+            text-align: center;
+            margin-left: 20px;
+        }
+        .qr-code-area img {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #eee;
+            padding: 5px;
+            background: #fff;
+        }
+        .qr-text {
+            font-size: 11px;
+            color: #888;
+            margin-top: 5px;
         }
         section {
             margin-bottom: 30px;
+            clear: both;
         }
         h2 {
             color: var(--accent-color);
             border-left: 5px solid var(--accent-color);
-            padding-left: 15px;
-            font-size: 1.4em;
+            padding: 8px 15px;
+            font-size: 1.3em;
             margin-bottom: 15px;
+            background: rgba(52, 152, 219, 0.05);
         }
         .experience-item {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 15px;
         }
-        .job-title {
-            font-weight: bold;
-            font-size: 1.1em;
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        .job-header {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
+            margin-bottom: 10px;
         }
-        .company {
+        .company-title {
+            font-weight: bold;
+            font-size: 1.1em;
             color: var(--primary-color);
         }
-        .date {
-            color: #888;
-            font-weight: normal;
+        .duration-tag {
+            background: #e1f5fe;
+            color: #0288d1;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .date-range {
+            color: #777;
+            font-size: 0.85em;
         }
         ul {
             margin: 10px 0;
             padding-left: 20px;
         }
         li {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
-        .highlight {
-            background-color: #fff9db;
-            padding: 10px;
+        .achievement-box {
+            background-color: #fffde7;
+            padding: 12px;
             border-radius: 4px;
-            border-left: 4px solid #f1c40f;
+            border-left: 4px solid #fbc02d;
             margin-top: 10px;
+            font-size: 0.9em;
         }
-        .education-list {
-            list-style: none;
-            padding: 0;
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* --- 手機版深度優化 --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 25px 15px;
+            }
+            header { 
+                flex-direction: column; 
+                text-align: center;
+                padding-bottom: 15px;
+            }
+            .photo-area { 
+                margin-right: 0; 
+                margin-bottom: 15px; 
+            }
+            .qr-code-area { 
+                margin-left: 0; 
+                margin-top: 20px;
+            }
+            .job-header { 
+                flex-direction: column; 
+                align-items: center;
+                text-align: center;
+            }
+            .company-title {
+                font-size: 1.1em;
+            }
+            .date-range {
+                margin-top: 5px;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
         }
         @media print {
-            body { background: white; padding: 0; }
-            .container { box-shadow: none; max-width: 100%; }
+            .container { box-shadow: none; border: none; }
         }
     </style>
 </head>
@@ -101,81 +198,102 @@
 
 <div class="container">
     <header>
-        <h1>蘇妍蓁</h1>
-        <div class="contact-info">
-            <span>📞 0925-010-637</span> | 
-            <span>✉️ yenchensu@gmail.com</span> | 
-            <span>📍 雲嘉南地區</span>
+        <div class="photo-area">
+            <img src="yenchen_photo.jpg" alt="蘇妍蓁照片">
+        </div>
+        <div class="header-text">
+            <h1>蘇妍蓁</h1>
+            <div class="contact-info">
+                <div>📞 0925010637</div>
+                <div>✉️ yenchensu@gmail.com</div>
+                <div>📍 居住地：台南市</div>
+                <div>🌐 <a href="https://yenchensu.selfcloud.tw/" target="_blank">yenchensu.selfcloud.tw</a></div>
+            </div>
+        </div>
+        <div class="qr-code-area">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yenchensu.selfcloud.tw/" alt="QR Code">
+            <div class="qr-text">掃描開啟網頁</div>
         </div>
     </header>
 
     <section>
         <h2>職涯總結</h2>
-        <p>擁有超過 15 年醫藥、通路與零售銷售經驗。於日商久光製藥擔任業務主任逾 10 年，具備深厚的經銷商管理與藥局通路開發能力，曾兩度獲得亞洲區銷售前十名之殊榮。擅長產品行銷、市場商化佈置及客訴處理，能精準洞察市場需求，維持長期穩定的客戶關係。</p>
+        <p>深耕醫藥與通路領域超過 15 年，具備卓越的業務推展與經銷商管理經驗。於日商久光製藥服務逾十年，專精於雲嘉南地區通路經營，成功維護超過 500 家藥局客戶。曾兩度獲得亞洲區銷售傑出成就獎，擅長將產品優勢轉化為市場績效。</p>
     </section>
 
     <section>
         <h2>工作經歷</h2>
         
         <div class="experience-item">
-            <div class="job-title">
-                <span class="company">日商久光製藥 | 業務主任</span>
-                <span class="date">2014/09 – 2025/03</span>
+            <div class="job-header">
+                <div>
+                    <span class="company-title">日商久光製藥 | 業務主任</span><br>
+                    <span class="duration-tag">十年六個月</span>
+                </div>
+                <span class="date-range">2014/09 – 2025/03</span>
             </div>
             <ul>
-                <li>定期拜訪雲嘉南區經銷商與藥局，維繫穩定的客戶關係並超額達成業績目標。</li>
-                <li>負責新產品報價、展示及行銷特色分析，並提供專業購買建議。</li>
-                <li>處理客訴問題與售後服務，並能察覺經銷商交易異常狀況以進行風險控管。</li>
-                <li>籌劃大型產品體驗活動（如試貼展銷會、馬拉松賽事支援）。</li>
-                <li>執行藥局商化佈置、陳列架整理及動線優化。</li>
+                <li><strong>規模通路經營：</strong> 深耕雲嘉南地區，定期拜訪並經營<strong>約 500 家藥局通路</strong>與經銷商。</li>
+                <li><strong>業務目標達成：</strong> 負責新產品報價、展示及分析，確保業績持續成長。</li>
+                <li><strong>客情維護：</strong> 負責客訴處理，並主動察覺經銷商交易異常以控制風險。</li>
+                <li><strong>品牌商化：</strong> 執行藥局陳列架優化；協辦馬拉松賽事支援及展銷會。</li>
             </ul>
-            <div class="highlight">
-                <strong>🏆 重要成就：</strong> 2014年亞洲區銷售第3名、2020年亞洲區銷售前10名
+            <div class="achievement-box">
+                🏆 2014 年亞洲區銷售第 3 名、2020 年亞洲區銷售前 10 名。
             </div>
         </div>
 
         <div class="experience-item">
-            <div class="job-title">
-                <span class="company">杏輝藥品 | 業務代表</span>
-                <span class="date">2012/08 – 2014/09</span>
+            <div class="job-header">
+                <div>
+                    <span class="company-title">杏輝藥品 | 業務代表</span><br>
+                    <span class="duration-tag">二年一個月</span>
+                </div>
+                <span class="date-range">2012/08 – 2014/09</span>
             </div>
             <ul>
-                <li>經營藥局通路，負責產品報價、訂單處理及帳款回收。</li>
-                <li>傳達公司重大業務活動訊息，並提供產品特色分析建議。</li>
+                <li>負責藥局客戶開發與訂單管理、退貨處理及帳款回收。</li>
+                <li>提供產品行銷及特色介紹，並負責完善的售後服務。</li>
             </ul>
-            <div class="highlight">
-                <strong>🏆 重要成就：</strong> 2013年全國第二季銷售第3名
+            <div class="achievement-box">
+                🏆 2013 年全國第二季銷售第 3 名。
             </div>
         </div>
 
         <div class="experience-item">
-            <div class="job-title">
-                <span class="company">寶雅國際 | 醫美顧問</span>
-                <span class="date">2009/03 – 2012/05</span>
+            <div class="job-header">
+                <div>
+                    <span class="company-title">寶雅國際 | 醫美顧問</span><br>
+                    <span class="duration-tag">三年二個月</span>
+                </div>
+                <span class="date-range">2009/03 – 2012/05</span>
             </div>
             <ul>
-                <li>提供醫學美容與保健食品銷售服務，並進行皮膚分析、血壓體脂測量。</li>
-                <li>負責商品進出庫管理、貨架陳列佈置及每日銷售統計報表。</li>
+                <li>提供醫學美容與保健食品諮詢服務，負責庫存管理與促銷執行。</li>
+                <li>建立顧客資料並進行 CALL 客維繫，提升門店業績。</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="job-title">
-                <span class="company">台安藥局 | 藥師助理</span>
-                <span class="date">2008/01 – 2009/02</span>
+            <div class="job-header">
+                <div>
+                    <span class="company-title">台安藥局 | 藥師助理</span><br>
+                    <span class="duration-tag">一年一個月</span>
+                </div>
+                <span class="date-range">2008/01 – 2009/02</span>
             </div>
             <ul>
-                <li>協助營養品、美妝品、婦嬰用品銷售及用藥衛教常識傳達。</li>
-                <li>協助藥師整理健保調劑處方及相關申報業務。</li>
+                <li>協助銷售營養品、美妝品及婦嬰用品，提供基本衛教服務。</li>
+                <li>分擔藥局業務、協助健保處方調劑相關申報事務。</li>
             </ul>
         </div>
     </section>
 
     <section>
-        <h2>教育背景</h2>
-        <ul class="education-list">
-            <li><strong>樹德科技大學</strong> - 建築與古蹟維護系</li>
-            <li><strong>台南高工</strong> - 製圖科</li>
+        <h2>學歷背景</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 8px;">🎓 <strong>樹德科技大學</strong> - 建築與古蹟維護系</li>
+            <li>🎓 <strong>台南高工</strong> - 製圖科</li>
         </ul>
     </section>
 </div>
