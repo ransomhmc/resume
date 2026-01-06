@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40分鐘高效減脂課表</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); }
+        .card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="gradient-bg text-gray-100 min-h-screen font-sans">
+
+    <div class="max-w-md mx-auto p-4">
+        <header class="text-center py-6">
+            <h1 class="text-3xl font-bold text-orange-400">🔥 40min 減脂魔鬼課表</h1>
+            <p class="text-gray-400 mt-2">100% 巨大組 • 零組間休息 • 腳踏車 SIT</p>
+        </header>
+
+        <div class="flex justify-between mb-6 text-sm font-mono bg-black bg-opacity-30 p-3 rounded-lg border border-gray-700">
+            <span class="text-blue-400">重訓: 25min</span>
+            <span class="text-red-400">有氧: 15min</span>
+            <span class="text-green-400">總計: 40min</span>
+        </div>
+
+        <div class="flex mb-6 bg-gray-800 rounded-lg p-1">
+            <button onclick="showTab('day1')" id="btn-day1" class="flex-1 py-2 rounded-md transition text-sm font-bold bg-orange-500 text-white">一三五：推拉組合</button>
+            <button onclick="showTab('day2')" id="btn-day2" class="flex-1 py-2 rounded-md transition text-sm font-bold text-gray-400">二四六：細節雕塑</button>
+        </div>
+
+        <div id="day1" class="tab-content active space-y-4">
+            <div class="card p-5 rounded-2xl border border-gray-700">
+                <h3 class="text-lg font-bold text-orange-300 mb-3">🏋️ 上肢巨大組 (循環 4 輪)</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center space-x-3 bg-gray-700 bg-opacity-40 p-3 rounded-lg">
+                        <span class="bg-orange-500 text-black font-bold w-6 h-6 flex items-center justify-center rounded-full text-xs">A</span>
+                        <div><p class="font-bold">啞鈴臥推 / 伏地挺身</p><p class="text-xs text-gray-400">12-15次 • 胸部大肌群</p></div>
+                    </li>
+                    <li class="flex items-center space-x-3 bg-gray-700 bg-opacity-40 p-3 rounded-lg">
+                        <span class="bg-orange-500 text-black font-bold w-6 h-6 flex items-center justify-center rounded-full text-xs">B</span>
+                        <div><p class="font-bold">啞鈴雙臂划船</p><p class="text-xs text-gray-400">12-15次 • 背部厚度</p></div>
+                    </li>
+                    <li class="flex items-center space-x-3 bg-gray-700 bg-opacity-40 p-3 rounded-lg">
+                        <span class="bg-orange-500 text-black font-bold w-6 h-6 flex items-center justify-center rounded-full text-xs">C</span>
+                        <div><p class="font-bold">啞鈴立姿肩推</p><p class="text-xs text-gray-400">12-15次 • 肩部線條</p></div>
+                    </li>
+                    <li class="flex items-center space-x-3 bg-gray-700 bg-opacity-40 p-3 rounded-lg">
+                        <span class="bg-orange-500 text-black font-bold w-6 h-6 flex items-center justify-center rounded-full text-xs">D</span>
+                        <div><p class="font-bold">仰臥起坐 / 死蟲式</p><p class="text-xs text-gray-400">20次 • 核心穩定</p></div>
+                    </li>
+                </ul>
+                <p class="text-center text-xs text-red-400 mt-4 font-bold">⚠️ 組間不休息，換動作即休息！</p>
+            </div>
+        </div>
+
+        <div id="day2" class="tab-content space-y-4">
+            <div class="card p-5 rounded-2xl border border-gray-700">
+                <h3 class="text-lg font-bold text-blue-300 mb-3">💪 線條巨大組 (循環 4 輪)</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center space-x-3 bg-gray-700 bg-opacity-40 p-3 rounded-lg">
+                        <span class="bg-blue-500 text-black font-bold w-6 h-6 flex items-center justify-center rounded-full text-xs">A</span>
+                        <div><p class="font-bold">滑輪下拉 / 引體向上機</p><p class="text-xs text-gray-400">12-15次 • 背部寬度</p></div>
+                    </li>
+                    <li class="flex items-center space-x-3 bg-gray-700 bg-opacity-40 p-3 rounded-lg">
+                        <span class="bg-blue-500 text-black font-bold w-6 h-6 flex items-center justify-center rounded-full text-xs">B</span>
+                        <div><p class="font-bold">啞鈴側平舉</p><p class="text-xs text-gray-400">15-20次 • 肩部中束</p></div>
+                    </li>
+                    <li class="flex items-center space-x-3 bg-gray-700 bg-opacity-40 p-3 rounded-lg">
+                        <span class="bg-blue-500 text-black font-bold w-6 h-6 flex items-center justify-center rounded-full text-xs">C</span>
+                        <div><p class="font-bold">滑輪三頭下壓</p><p class="text-xs text-gray-400">15次 • 手臂線條</p></div>
+                    </li>
+                    <li class="flex items-center space-x-3 bg-gray-700 bg-opacity-40 p-3 rounded-lg">
+                        <span class="bg-blue-500 text-black font-bold w-6 h-6 flex items-center justify-center rounded-full text-xs">D</span>
+                        <div><p class="font-bold">啞鈴彎舉</p><p class="text-xs text-gray-400">15次 • 肱二頭肌</p></div>
+                    </li>
+                </ul>
+                <p class="text-center text-xs text-red-400 mt-4 font-bold">⚠️ 極速執行，器材預先準備好！</p>
+            </div>
+        </div>
+
+        <div class="mt-6 card p-5 rounded-2xl border border-gray-700">
+            <h3 class="text-lg font-bold text-green-400 mb-3">🚴 腳踏車 SIT (15分鐘)</h3>
+            <div class="space-y-2 text-sm text-gray-300">
+                <div class="flex justify-between border-b border-gray-800 pb-2"><span>00-02min</span> <span>暖身輕鬆踩</span></div>
+                <div class="flex justify-between border-b border-gray-800 pb-2 font-bold text-white">
+                    <span>02-12min</span> <span>30s 衝刺 + 30s 慢踩 (x10次)</span>
+                </div>
+                <div class="flex justify-between pb-1"><span>12-15min</span> <span>緩冷心率下降</span></div>
+            </div>
+        </div>
+
+        <footer class="text-center py-10 text-xs text-gray-500">
+            堅持一週六練，減脂必成！<br>
+            © 您的專屬減脂助教 Gemini
+        </footer>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            
+            const btn1 = document.getElementById('btn-day1');
+            const btn2 = document.getElementById('btn-day2');
+            
+            if(tabId === 'day1') {
+                btn1.classList.add('bg-orange-500', 'text-white');
+                btn1.classList.remove('text-gray-400');
+                btn2.classList.remove('bg-orange-500', 'text-white');
+                btn2.classList.add('text-gray-400');
+            } else {
+                btn2.classList.add('bg-orange-500', 'text-white');
+                btn2.classList.remove('text-gray-400');
+                btn1.classList.remove('bg-orange-500', 'text-white');
+                btn1.classList.add('text-gray-400');
+            }
+        }
+    </script>
+</body>
+</html>
